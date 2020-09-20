@@ -162,8 +162,8 @@ io.on('connection', function (socket) {
 
 });
 
-//app.listen(3000);
-app.listen(8080);
+app.listen(process.env.PORT || 3000);
+//app.listen(8080);
 console.log('Server listening on 3000');
 
 //-------------------------------------------------------------
