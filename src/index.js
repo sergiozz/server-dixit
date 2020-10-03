@@ -15,6 +15,7 @@ var backupState = {
 
   yaseleciono:false,
   yavoto:false,
+  cartaMandadaTuya:0,
 
   nrojugadores:0,
   nrocartas:0,
@@ -133,6 +134,7 @@ io.on('connection', function (socket) {
   socket.on('eligiendo', function (payload) {
     console.log("un elegido")
     backupState.players[payload.positionja].yaseleciono = true;
+    backupState.players[payload.positionja].cartaMandadaTuya = payload.carta;
     partidaActual.others.push(payload);
 
     if (partidaActual.others.length == backupState.nrojugadores){
